@@ -19,3 +19,10 @@ a.nodecoration{
 .posttable tr:nth-child(1) td{
     border-top: none;
 }
+
+.commenttable tr td:nth-child(2){
+    width: 300px;
+}
+.commenttable tr:nth-child(1) td{
+    border-top: none;
+}

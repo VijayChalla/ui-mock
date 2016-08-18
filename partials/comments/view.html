@@ -1,0 +1,27 @@
+<table class="table commenttable">
+    <tr>
+        <td><h3>Details for {{comment.title}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>postID</td>
+        <td>{{comment.postId}}</td>
+    </tr>
+    <tr>
+        <td>Comment Name</td>
+        <td>{{comment.name}}</td>
+    </tr>
+
+    <tr>
+        <td>Comment Email</td>
+        <td>{{comment.email}}</td>
+    </tr>
+
+    <tr>
+        <td>Comment Body</td>
+        <td>{{comment.body}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editComment({id:comment.id})">Edit</a>
+</div>

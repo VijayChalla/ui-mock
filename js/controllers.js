@@ -63,7 +63,7 @@ angular.module('movieApp.controllers',[])
     $scope.deletePost=function(post){
         if(popupService.showPopup('Really delete this?')){
             post.$delete(function(){
-                
+
                 $state.go('posts');
             });
         }
@@ -104,6 +104,58 @@ angular.module('movieApp.controllers',[])
     };
 
     $scope.loadPost();
+
+
+}).controller('CommentListController',function($scope,$state,popupService,$window,Comment){
+
+    // list all Posts
+    $scope.comments=Comment.query();
+
+    // delete a post
+    $scope.deletePost=function(comment){
+        if(popupService.showPopup('Really delete this?')){
+            comment.$delete(function(){
+
+                $state.go('comments');
+            });
+        }
+    }
+
+}).controller('CommentCreateController',function($scope,$state,$stateParams,Comment){
+
+    // add new post
+
+    $scope.comment = new Comment();
+
+    $scope.addComment = function(){
+        $scope.comment.$save(function(){
+
+            // go to list page
+            $state.go('comments');
+        });
+    }
+
+}).controller('CommentViewController',function($scope,$stateParams,Comment){
+
+    // view specific post
+    $scope.comment = Comment.get({id:$stateParams.id});
+}).controller('CommentEditController',function($scope,$state,$stateParams,Comment){
+
+    // update post
+
+    $scope.updateComment=function(){
+        $scope.comment.$update(function(){
+
+            // go to list page
+            $state.go('comments');
+        });
+    };
+
+    $scope.loadComment=function(){
+        $scope.comment=Comment.get({id:$stateParams.id});
+    };
+
+    $scope.loadComment();
 
 
 });

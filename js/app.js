@@ -39,6 +39,24 @@ angular.module('movieApp').config(function($stateProvider,$httpProvider){
         url:'/posts/:id/edit',
         templateUrl:'partials/post/edit.html',
         controller:'PostEditController'
+
+    }).state('comments',{
+        url:'/comments',
+        templateUrl:'partials/comments/index.html',
+        controller:'CommentListController'
+    }).state('newComment',{
+        url:'/comments/new',
+        templateUrl:'partials/comments/add.html',
+        controller:'CommentCreateController'
+    }).state('viewComment',{
+       url:'/comments/:id/view',
+       templateUrl:'partials/comments/view.html',
+       controller:'CommentViewController'
+    }).state('editcomment',{
+        url:'/comments/:id/edit',
+        templateUrl:'partials/comments/edit.html',
+        controller:'CommentEditController'
+
     });
 }).run(function($state){
    $state.go('movies');

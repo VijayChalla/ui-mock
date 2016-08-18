@@ -1,0 +1,17 @@
+<a ui-sref="newComment" class="btn-primary btn-lg nodecoration">Add New Comment </a>
+<table class="table commenttable">
+    <tr>
+        <td><h3>All Comments</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="comment in comments">
+        <td>{{comment.postId}}</td>
+        <td>{{comment.name}}</td>
+        <td>{{comment.email}}</td>
+        <td>{{comment.body}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewComment({id:comment.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteComment(comment)">Delete</a>
+        </td>
+    </tr>
+</table>
