@@ -158,4 +158,55 @@ angular.module('movieApp.controllers',[])
     $scope.loadComment();
 
 
+}).controller('PhotoListController',function($scope,$state,popupService,$window,Photo){
+
+    // list all photos
+    $scope.photos = Photo.query();
+
+    // delete a photo
+    $scope.deletePhoto=function(photo){
+        if(popupService.showPopup('Really delete this?')){
+            movie.$delete(function(){
+                $window.location.href='';
+            });
+        }
+    }
+
+}).controller('PhotoCreateController',function($scope,$state,$stateParams,Photo){
+
+    // add new Photo
+
+    $scope.photo = new Photo();
+
+    $scope.addPhoto = function(){
+        $scope.photo.$save(function(){
+
+            // go to list page
+            $state.go('photos');
+        });
+    }
+
+}).controller('PhotoViewController',function($scope,$stateParams,Photo){
+
+    // view specific post
+    $scope.photo = Photo.get({id:$stateParams.id});
+}).controller('PhotoEditController',function($scope,$state,$stateParams,Photo){
+
+    // update photo
+
+    $scope.updatePhoto=function(){
+        $scope.photo.$update(function(){
+
+            // go to list page
+            $state.go('photos');
+        });
+    };
+
+    $scope.loadPhoto=function(){
+        $scope.photo = Photo.get({id:$stateParams.id});
+    };
+
+    $scope.loadPhoto();
+
+
 });

@@ -49,3 +49,19 @@ app.factory('Comment',function($resource){
         return $window.confirm(message);
     }
 });
+
+
+app.factory('Photo',function($resource){
+    return $resource('https://jsonplaceholder.typicode.com/photos/:id',{id:'@id'},{
+
+        update: {
+            method: 'PUT'
+        }
+    });
+
+    // popup service registered
+}).service('popupService',function($window){
+    this.showPopup=function(message){
+        return $window.confirm(message);
+    }
+});

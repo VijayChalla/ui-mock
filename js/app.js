@@ -57,6 +57,23 @@ angular.module('movieApp').config(function($stateProvider,$httpProvider){
         templateUrl:'partials/comments/edit.html',
         controller:'CommentEditController'
 
+    }).state('photos',{
+        url:'/photos',
+        templateUrl:'partials/photos/index.html',
+        controller:'PhotoListController'
+    }).state('newPhoto',{
+        url:'/photos/new',
+        templateUrl:'partials/photos/add.html',
+        controller:'PhotoCreateController'
+    }).state('viewPhoto',{
+       url:'/photos/:id/view',
+       templateUrl:'partials/photos/view.html',
+       controller:'PhotoViewController'
+    }).state('editPhoto',{
+        url:'/photos/:id/edit',
+        templateUrl:'partials/photos/edit.html',
+        controller:'PhotoEditController'
+
     });
 }).run(function($state){
    $state.go('movies');

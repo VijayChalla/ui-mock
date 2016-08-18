@@ -1,0 +1,27 @@
+<table class="table commenttable">
+    <tr>
+        <td><h3>Details for {{photo.url}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>AlbumId</td>
+        <td>{{photo.albumId}}</td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td>{{photo.title}}</td>
+    </tr>
+
+    <tr>
+        <td>Url</td>
+        <td>{{photo.url}}</td>
+    </tr>
+
+    <tr>
+        <td>Thumbnailurl</td>
+        <td>{{photo.thumbnailUrl}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editPhoto({id:photo.id})">Edit</a>
+</div>

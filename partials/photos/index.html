@@ -1,0 +1,24 @@
+<a ui-sref="newPhoto" class="btn-primary btn-lg nodecoration">Add Photo Details </a>
+<table class="table phototable">
+    <tr>
+        <td><h3>All Photos</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="photo in photos">
+        <td>{{photo.albumId}}</td>
+        <td>{{photo.title}}</td>
+        <td>{{photo.url}}</td>
+        <td>{{photo.thumbnailUrl}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewPhoto({id:photo.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deletePhoto(photo)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+<!-- "albumId": 1,
+    "id": 1,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "http://placehold.it/600/92c952",
+    "thumbnailUrl": "http://placehold.it/150/30ac17" -->
