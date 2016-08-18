@@ -1,0 +1,22 @@
+<table class="table posttable">
+    <tr>
+        <td><h3>Details for {{post.title}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Post UserID</td>
+        <td>{{post.userId}}</td>
+    </tr>
+
+    <tr>
+        <td>Post Title</td>
+        <td>{{post.title}}</td>
+    </tr>
+    <tr>
+        <td>Post Body</td>
+        <td>{{post.body}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editPost({id:post.id})">Edit</a>
+</div>

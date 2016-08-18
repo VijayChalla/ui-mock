@@ -1,0 +1,16 @@
+<a ui-sref="newPost" class="btn-primary btn-lg nodecoration">Add New Post </a>
+<table class="table posttable">
+    <tr>
+        <td><h3>All Posts</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="post in posts">
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewPost({id:post.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deletePost(post)">Delete</a>
+        </td>
+    </tr>
+</table>

@@ -12,3 +12,10 @@
 a.nodecoration{
     text-decoration:none;
 }
+.posttable tr td:nth-child(2){
+    width: 300px;
+}
+
+.posttable tr:nth-child(1) td{
+    border-top: none;
+}

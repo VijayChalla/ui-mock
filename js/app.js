@@ -5,6 +5,7 @@
 angular.module('movieApp',['ui.router','ngResource','movieApp.controllers','movieApp.services']);
 
 angular.module('movieApp').config(function($stateProvider,$httpProvider){
+
     $stateProvider.state('movies',{
         url:'/movies',
         templateUrl:'partials/movies.html',
@@ -21,6 +22,23 @@ angular.module('movieApp').config(function($stateProvider,$httpProvider){
         url:'/movies/:id/edit',
         templateUrl:'partials/movie-edit.html',
         controller:'MovieEditController'
+
+    }).state('posts',{
+        url:'/posts',
+        templateUrl:'partials/post/index.html',
+        controller:'PostListController'
+    }).state('newPost',{
+        url:'/posts/new',
+        templateUrl:'partials/post/add.html',
+        controller:'PostCreateController'
+    }).state('viewPost',{
+       url:'/posts/:id/view',
+       templateUrl:'partials/post/view.html',
+       controller:'PostViewController'
+    }).state('editPost',{
+        url:'/posts/:id/edit',
+        templateUrl:'partials/post/edit.html',
+        controller:'PostEditController'
     });
 }).run(function($state){
    $state.go('movies');
