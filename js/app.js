@@ -52,7 +52,7 @@ angular.module('movieApp').config(function($stateProvider,$httpProvider){
        url:'/comments/:id/view',
        templateUrl:'partials/comments/view.html',
        controller:'CommentViewController'
-    }).state('editcomment',{
+    }).state('editComment',{
         url:'/comments/:id/edit',
         templateUrl:'partials/comments/edit.html',
         controller:'CommentEditController'
